@@ -5,21 +5,20 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class ApiCall {
-  final int id;
-  final String title;
-  final String body;
-  const ApiCall({required this.id, required this.title, required this.body});
+  
+  final String text;
+  final List<Map> items;
+  const ApiCall({ required this.text, required this.items});
   factory ApiCall.formJson(Map<String, dynamic> json) {
     return ApiCall(
-        id: json['id'] as int,
-        title: json['title'] as String,
-        body: json['body'] as String);
+        text: json['text'] as String,
+        items: json['items'] as List<Map> );
   }
 }
 
 Future<List<ApiCall>> getdata() async {
   final response =
-      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+      await http.get(Uri.parse('https://pm.agilecyber.co.uk/report/api.php'));
   var dummy = compute(listformation, response.body);
   print('the response is:$dummy');
   return dummy;

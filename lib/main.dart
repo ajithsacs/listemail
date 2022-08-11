@@ -53,7 +53,7 @@ class Mylistview extends StatelessWidget {
               children: [
                 CircleAvatar(
                   child: Text(
-                    data[index].title[0].toUpperCase(),
+                    data[index].text,
                     style: const TextStyle(fontSize: 20),
                   ),
                   backgroundColor: Colors.lightGreenAccent,
@@ -64,7 +64,7 @@ class Mylistview extends StatelessWidget {
                     Container(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: Text(
-                        data[index].title.toUpperCase(),
+                        data[index].,
                         style: TextStyle(fontWeight: FontWeight.bold),
                         overflow: TextOverflow.ellipsis,
                       ),
